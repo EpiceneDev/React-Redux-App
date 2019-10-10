@@ -1,4 +1,4 @@
-import { VARIABLE_HERE } from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from '../actions';
 
 const initialState = {
     breweries: [],
@@ -6,22 +6,22 @@ const initialState = {
     error: ''
 };
 
-const reducer = (state= initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case: START_FETCHING:
+        case START_FETCHING:
             return {
                 ...state,
                 isFetching: true,
                 error: ''
             }
-        case: FETCH_SUCCESS:
+        case FETCH_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
                 error: '',
                 list: action.payload
             }
-        case: FETCH_FAILURE:
+        case FETCH_FAILURE:
             return {
                 ...state,
                 isFetching: false,

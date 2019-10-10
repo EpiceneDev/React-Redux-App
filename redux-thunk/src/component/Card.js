@@ -1,11 +1,13 @@
-import react from 'react';
+import React from 'react';
 
-const Card = props => {
+const Card = ({ name, city, state }) => {
 
     return (
         <div className="card">
-            <h1>{props.name}</h1>
-            <h2>{props.city}, {props.state}</h2>
+            <h1>{name}</h1>
+            <h2>{city}, {state}</h2>
         </div>
     )
 }
+
+export default Card;
