@@ -1,10 +1,12 @@
-import { VARIABLE_HERE } from '../actions'
+import { VARIABLE_HERE } from '../actions';
 
-const initialState ={
+const initialState = {
+    breweries: [],
+    isFetching: false,
+    error: ''
+};
 
-}
-
-export const reducer = (state= initialState, action) => {
+const reducer = (state= initialState, action) => {
     switch(action.type) {
         case: START_FETCHING:
             return {
@@ -28,4 +30,6 @@ export const reducer = (state= initialState, action) => {
         default:
             return state;
     }
-}
+};
+
+export default reducer;

@@ -12,9 +12,8 @@ const List = props => {
         <div>
             {props.error && <p>{props.error}</p>}
             {props.list.map(item => {
-                <Card key={item.id}}
-            })
-        }     
+                <Card key={item.id} {...item} />
+            })}    
         </div>
     )
 };
