@@ -7,6 +7,7 @@ const List = props => {
     useEffect(() => {
         props.fetchFacts();
     }, []);
+    console.log(props)
 
     if(props.isFetching) {
         // usually a spinner (react-loader-spinner)
@@ -14,12 +15,10 @@ const List = props => {
     };
 
     return (
-        <div>
+        <>
             {props.error && <p>{props.error}</p>}
-            {/* {props.item.map(item => {
-                <Card key={item.id} {...item} />
-            })}     */}
-        </div>
+            <p>{props.breweries.name}</p>   
+        </>
     );
 };
 
@@ -32,4 +31,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetch})(List);
+export default connect(mapStateToProps, { fetchFacts })(List);

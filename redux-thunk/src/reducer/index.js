@@ -13,23 +13,23 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: true,
                 error: ''
-            }
+            };
         case FETCH_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
                 error: '',
-                list: action.payload
-            }
+                breweries: action.payload
+            };
         case FETCH_FAILURE:
             return {
                 ...state,
                 isFetching: false,
                 error: action.payload
-            }
+            };
         default:
             return state;
-    }
+    };
 };
 
 export default reducer;
